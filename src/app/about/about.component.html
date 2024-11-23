@@ -8,8 +8,8 @@
         </div>
         <div>
             <span class="sh font-italic primary-color">{{occupation()}}</span>
-            <span #aboutBtn class="ml-2 sh primary-color about-btn hidden" nz-icon nzType="info-circle"
-                nzTheme="outline" (click)="createAboutTechComponent()"></span>
+            <span #aboutBtn class="ml-2 sh primary-color about-btn pointer-event-all hidden" nz-icon
+                nzType="info-circle" nzTheme="outline" (click)="createAboutTechComponent()"></span>
             <span #occupationTag class="hidden sh">|</span>
         </div>
     </div>
@@ -19,5 +19,9 @@
             Projects
             <span nz-icon nzType="arrow-down"></span>
         </button>
+    </div>
+    <div #scrollToTopBtn nz-flex nzAlign="center" nzJustify="center"
+        class="scroll-to-top-btn pointer-event-all hidden primary-bg-color" (click)="scrollToTop()">
+        <span style="font-size: 25px;" nz-icon nzType="arrow-up" nzTheme="outline"></span>
     </div>
 </div>

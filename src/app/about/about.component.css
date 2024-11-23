@@ -36,8 +36,6 @@
 }
 
 .about-btn {
-  cursor: pointer;
-  pointer-events: all;
   padding: 0px;
 }
 
@@ -93,6 +91,16 @@ tag {
   50% {
     opacity: 0;
   }
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width:50px;
+  border-radius: 30px;  
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 767px) {

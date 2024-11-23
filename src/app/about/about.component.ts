@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, signal, ViewChild } from '@angular/core';
 import { MatterTs } from '../_matter/matter-ts';
 import { Technology } from '../_models/technology';
 import { Utility } from '../_utility/utility';
@@ -18,6 +18,7 @@ export class AboutComponent implements OnInit {
   @ViewChild('titleTag', { static: true }) titleCursor!: ElementRef;
   @ViewChild('occupationTag', { static: true }) occupationCursor!: ElementRef;
   @ViewChild('aboutBtn', { static: true }) aboutBtn!: ElementRef;
+  @ViewChild('scrollToTopBtn', { static: true }) scrollToTopBtn!: ElementRef;
   appUser: AppUser;
   intro = signal("");
   occupation = signal("");
@@ -79,11 +80,11 @@ export class AboutComponent implements OnInit {
 
   createAboutTechComponent(): void {
     const modal = this.modal.create({
-      nzTitle: '',      
+      nzTitle: '',
       nzContent: AboutTechnologyComponent,
-      nzWidth:"80%",
-      nzStyle:{ top: '15px' },
-      nzFooter:null,           
+      nzWidth: "80%",
+      nzStyle: { top: '15px' },
+      nzFooter: null,
     });
     const instance = modal.getContentComponent();
     instance.technologies = this.appUser.technologies!;
@@ -93,5 +94,24 @@ export class AboutComponent implements OnInit {
   scrollTo100vh() {
     const viewportHeight = window.innerHeight;
     window.scrollTo({ top: viewportHeight, behavior: 'smooth' });
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrolled = window.scrollY;
+    const viewportHeight = window.innerHeight;
+
+    if (this.scrollToTopBtn) {
+      const scrollToTopBtnClasses = this.scrollToTopBtn.nativeElement.classList;
+
+      if (Math.ceil(scrolled) >= Math.ceil(viewportHeight)) {
+        scrollToTopBtnClasses.remove('hidden');
+      } else if (scrolled == 0) {
+        scrollToTopBtnClasses.add('hidden');
+      }
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
