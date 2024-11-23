@@ -5,6 +5,8 @@ import { Utility } from '../_utility/utility';
 import { AppUserService } from '../_services/app-user.service';
 import { AppUser } from '../_models/app-user';
 import { GenericColor } from '../_models/generic-color';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { AboutTechnologyComponent } from './about-technology/about-technology.component';
 
 @Component({
   selector: 'app-about',
@@ -16,16 +18,13 @@ export class AboutComponent implements OnInit {
   @ViewChild('titleTag', { static: true }) titleCursor!: ElementRef;
   @ViewChild('occupationTag', { static: true }) occupationCursor!: ElementRef;
   @ViewChild('aboutBtn', { static: true }) aboutBtn!: ElementRef;
-  colors: string[] = ["purple", "darkBlue", "red", "red", "blue", "orange", "blue", "blue", "yellow", "blue", "blue", "orange"];
-  techs: GenericColor<Technology>[] = [];
   appUser: AppUser;
   intro = signal("");
   occupation = signal("");
 
   //LIFE CYCLES
-  constructor(private userService: AppUserService) {
+  constructor(private userService: AppUserService, private modal: NzModalService) {
     this.appUser = this.userService.user!;
-    this.constructorInit();
   }
 
   async ngOnInit(): Promise<void> {
@@ -33,21 +32,14 @@ export class AboutComponent implements OnInit {
   }
 
   //UI LOGIC
-  constructorInit() {
-    // let fullName = this.appUser.name;
-    // this.firstName = fullName.substring(0, this.appUser.name.indexOf(" "));
-    // this.lastName = fullName.substring(this.appUser.name.indexOf(" "), fullName.length);
-  }
-
   async pageInit(): Promise<void> {
-    this.techs = this.appUser.technologies?.map((val) => <GenericColor<Technology>>{ obj: val, color: Utility.listRandom(this.colors) })!;
     let color = '#121212';
     MatterTs.gyro(this.matterContainer.nativeElement, color);
     await this.typeIntro();
   }
 
   async typeIntro(): Promise<void> {
-    let typeSpeed = 110;
+    let typeSpeed = 100;
     let intro = ["Hi. ", "I'm " + this.appUser.name];
 
     //Title Cursor
@@ -73,16 +65,29 @@ export class AboutComponent implements OnInit {
     let aboutBtnClasses = this.aboutBtn.nativeElement.classList;
     occupationClasses.remove('hidden');
     occupationClasses.add('cursor');
-    
+
     let occupationName = this.appUser.occupationName;
     for (let j = 0; j < occupationName!.length; j++) {
       this.occupation.set(this.occupation() + occupationName![j]);
       await new Promise(resolve => setTimeout(resolve, typeSpeed));
     }
-    
+
     occupationClasses.remove('cursor');
     aboutBtnClasses.remove('hidden');
     occupationClasses.add('hidden');
+  }
+
+  createAboutTechComponent(): void {
+    const modal = this.modal.create({
+      nzTitle: '',      
+      nzContent: AboutTechnologyComponent,
+      nzWidth:"80%",
+      nzStyle:{ top: '15px' },
+      nzFooter:null,           
+    });
+    const instance = modal.getContentComponent();
+    instance.technologies = this.appUser.technologies!;
+    instance.description = this.appUser.displayDescription!;
   }
 
   scrollTo100vh() {

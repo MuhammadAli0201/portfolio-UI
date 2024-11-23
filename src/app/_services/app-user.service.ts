@@ -28,8 +28,9 @@ export class AppUserService {
       social: {
         id: '1',
         linkedIn: 'https://www.linkedin.com/in/muhammad-ali-b9838b240/',
-        gmail: '',
-        github: '',
+        github: 'https://github.com/MuhammadAli0201',
+        location:'https://www.google.com/maps/place/Panwan,+Nankana+Sahib,+Punjab/data=!4m2!3m1!1s0x3918990ff2b7c1a5:0xdadd62bb426b8420?sa=X&ved=1t:242&ictx=111',
+        phoneNo:"0307-3401167",
         userId: '1'
       },
       technologies: [
@@ -46,12 +47,12 @@ export class AppUserService {
         {
           id: '1',
           userId: '1',
-          title: "MS SQL Server",
+          title: "Angular",
         },
         {
           id: '1',
           userId: '1',
-          title: "Angular",
+          title: "MS SQL Server",
         },
         {
           id: '1',

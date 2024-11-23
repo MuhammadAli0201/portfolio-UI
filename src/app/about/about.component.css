@@ -17,7 +17,7 @@
   height: 100vh;
   z-index: 0;
   pointer-events: auto;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   filter: brightness(70%);
 }
 
@@ -35,14 +35,10 @@
   padding-bottom: 4vh;
 }
 
-.description {
-  font-size: clamp(12px, 1.1vw, 28px);
-}
-
-.about-btn
-{
-    cursor: pointer;
-    pointer-events: all;
+.about-btn {
+  cursor: pointer;
+  pointer-events: all;
+  padding: 0px;
 }
 
 span {

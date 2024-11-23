@@ -26,6 +26,7 @@ import { SocialsComponent } from './socials/socials.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { AboutTechnologyComponent } from './about/about-technology/about-technology.component';
 
 registerLocaleData(en);
 
@@ -42,7 +43,8 @@ registerLocaleData(en);
     SocialsComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutTechnologyComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ registerLocaleData(en);
     NzMenuModule,
     FormsModule,
     AntdModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule    
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

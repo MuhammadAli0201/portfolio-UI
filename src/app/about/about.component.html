@@ -1,33 +1,18 @@
 <div #matterContainer class="matter-container"></div>
 
 <div nz-row class="content">
-    <div class="h-100" nzJustify="center" nz-flex nzVertical>
-        <div nzGap="large" nz-flex nzVertical>
-            <div>
-                <span class="h">{{intro()}}</span>
-                <!-- <span class="h primary-color">{{lastName}}</span> -->
-                <span #titleTag class="h">|</span>
-            </div>
-            <div>
-                <span class="sh font-italic primary-color">{{occupation()}}</span>
-                <span #aboutBtn class="ml-2 sh primary-color about-btn hidden" nz-icon nzType="info-circle" nzTheme="outline"></span>
-                <span #occupationTag class="hidden">|</span>
-            </div>
-            <div>
-                <!-- <button nz-button nzType="primary">About</button> -->
-            </div>
-            <!-- <span class="description text-justify">{{appUser.displayDescription}}</span> -->
+    <div class="h-100" nzJustify="center" nzGap="large" nz-flex nzVertical>
+        <div>
+            <span class="h">{{intro()}}</span>
+            <span #titleTag class="h">|</span>
+        </div>
+        <div>
+            <span class="sh font-italic primary-color">{{occupation()}}</span>
+            <span #aboutBtn class="ml-2 sh primary-color about-btn hidden" nz-icon nzType="info-circle"
+                nzTheme="outline" (click)="createAboutTechComponent()"></span>
+            <span #occupationTag class="hidden sh">|</span>
         </div>
     </div>
-
-    <!-- <div nz-col [nzOffset]="4" [nzXs]="0" [nzSm]="0" [nzMd]="8">
-        <div class="h-100" nz-flex nzAlign="center" nzJustify="center" nzVertical>
-            <img class="img-fluid" src="images/tech-tree.png">
-            <div class="mt-3" nz-flex nzGap="small" nzWrap="wrap">
-                <nz-tag *ngFor="let t of techs" [nzColor]="t.color">{{t.tech.title}}</nz-tag>
-            </div>
-        </div>
-    </div> -->
 
     <div class="projects-btn pointer-event-all">
         <button (click)="scrollTo100vh()" class="btn btn-large primary-bg-color text-white">

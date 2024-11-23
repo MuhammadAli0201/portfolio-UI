@@ -17,7 +17,7 @@ export class ProjectDisplayComponent implements OnInit {
     'indigo', 'violet', 'gold', 'silver', 'coral', 'navy',
     'salmon', 'khaki', 'plum', 'orchid', 'tan', 'maroon',
     'crimson', 'turquoise', 'slateblue', 'mediumseagreen',
-    'dodgerblue', 'lavender'
+    'dodgerblue'
   ];
 
   ngOnInit(): void {
