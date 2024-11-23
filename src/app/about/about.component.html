@@ -2,7 +2,7 @@
 
 <div nz-row class="content">
     <div class="h-100" nzJustify="center" nz-flex nzVertical>
-        <div nz-flex nzVertical>
+        <div nzGap="large" nz-flex nzVertical>
             <div>
                 <span class="h">{{intro()}}</span>
                 <!-- <span class="h primary-color">{{lastName}}</span> -->
@@ -10,7 +10,11 @@
             </div>
             <div>
                 <span class="sh font-italic primary-color">{{occupation()}}</span>
+                <span #aboutBtn class="ml-2 sh primary-color about-btn hidden" nz-icon nzType="info-circle" nzTheme="outline"></span>
                 <span #occupationTag class="hidden">|</span>
+            </div>
+            <div>
+                <!-- <button nz-button nzType="primary">About</button> -->
             </div>
             <!-- <span class="description text-justify">{{appUser.displayDescription}}</span> -->
         </div>

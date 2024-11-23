@@ -15,6 +15,7 @@ export class AboutComponent implements OnInit {
   @ViewChild('matterContainer', { static: true }) matterContainer!: ElementRef;
   @ViewChild('titleTag', { static: true }) titleCursor!: ElementRef;
   @ViewChild('occupationTag', { static: true }) occupationCursor!: ElementRef;
+  @ViewChild('aboutBtn', { static: true }) aboutBtn!: ElementRef;
   colors: string[] = ["purple", "darkBlue", "red", "red", "blue", "orange", "blue", "blue", "yellow", "blue", "blue", "orange"];
   techs: GenericColor<Technology>[] = [];
   appUser: AppUser;
@@ -69,16 +70,18 @@ export class AboutComponent implements OnInit {
 
     // Occupation Cursor
     let occupationClasses = this.occupationCursor.nativeElement.classList;
+    let aboutBtnClasses = this.aboutBtn.nativeElement.classList;
     occupationClasses.remove('hidden');
     occupationClasses.add('cursor');
-
+    
     let occupationName = this.appUser.occupationName;
     for (let j = 0; j < occupationName!.length; j++) {
       this.occupation.set(this.occupation() + occupationName![j]);
       await new Promise(resolve => setTimeout(resolve, typeSpeed));
     }
-
+    
     occupationClasses.remove('cursor');
+    aboutBtnClasses.remove('hidden');
     occupationClasses.add('hidden');
   }
 
