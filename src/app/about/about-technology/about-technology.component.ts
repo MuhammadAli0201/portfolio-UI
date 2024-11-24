@@ -12,7 +12,19 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 export class AboutTechnologyComponent implements OnInit {
   technologies: Technology[] = [];
   description:string='';
-  colors: string[] = ["darkRed", "darkBlue", "darkOrange", "purple"];
+  colors: string[] = [
+    "#FF6347", // Tomato (lightRed)
+    "#4169E1", // Royal Blue (lightBlue)
+    "#FFA500", // Orange (lightOrange)
+    "#8A2BE2", // Blue Violet (lightPurple)
+    "#FFD700", // Gold
+    "#32CD32", // Lime Green
+    "#FF1493", // Deep Pink
+    "#00CED1", // Dark Turquoise
+    "#FF69B4", // Hot Pink
+    "#20B2AA"  // Light Sea Green
+  ];
+  
   techs: GenericColor<Technology>[] = [];
 
   //LIFE CYCLES

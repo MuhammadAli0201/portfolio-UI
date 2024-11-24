@@ -48,8 +48,8 @@ export class ContactComponent {
     this.isLoading=false;
     if (result) {
       this.modal.success({
-        nzTitle: "Yes! Email Sent successfully.",
-        nzContent: "Thanks for your valuable time. Please wait for the response.",
+        nzTitle: "Yes! Email Sent Successfully.",
+        nzContent: "Thank you for your time! We'll be in touch with you shortly.",
         nzCentered: true
       });
     }

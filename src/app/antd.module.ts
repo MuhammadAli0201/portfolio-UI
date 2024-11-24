@@ -28,6 +28,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzI18nModule } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -130,6 +131,7 @@ import { NzColorPickerModule } from 'ng-zorro-antd/color-picker';
     NzTableModule,
     NzTabsModule,
     NzTagModule,
+    NzImageModule,
     NzTimePickerModule,
     NzTimelineModule,
     NzToolTipModule,

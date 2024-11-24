@@ -9,7 +9,7 @@
         <div>
             <span class="sh font-italic primary-color">{{occupation()}}</span>
             <span #aboutBtn class="ml-2 sh primary-color about-btn pointer-event-all hidden" nz-icon
-                nzType="info-circle" nzTheme="outline" (click)="createAboutTechComponent()"></span>
+                nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="Information" nzTooltipColor="rgb(19, 141, 171)" (click)="createAboutTechComponent()"></span>
             <span #occupationTag class="hidden sh">|</span>
         </div>
     </div>
@@ -21,7 +21,7 @@
         </button>
     </div>
     <div #scrollToTopBtn nz-flex nzAlign="center" nzJustify="center"
-        class="scroll-to-top-btn pointer-event-all hidden primary-bg-color" (click)="scrollToTop()">
+        class="scroll-to-top-btn pointer-event-all hidden primary-bg-color" nz-tooltip nzTooltipTitle="Top" (click)="scrollToTop()">
         <span style="font-size: 25px;" nz-icon nzType="arrow-up" nzTheme="outline"></span>
     </div>
 </div>

@@ -9,8 +9,7 @@
 
 <ng-template #image>
     <div class="mt-md-4 h-100 w-100" nz-flex nzAlign="center" nzJustify="center">
-        <img *ngFor="let img of project.images" [src]="img.path"
-            [ngStyle]="{'height' : 'clamp(130px, 18vw, 600px)'}">
+        <img class="proj-img" nz-image *ngFor="let img of project.images" [nzSrc]="img.path">
     </div>
 </ng-template>
 
