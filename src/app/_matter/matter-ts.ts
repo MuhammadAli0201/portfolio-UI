@@ -43,7 +43,7 @@ export class MatterTs {
         Runner.run(runner, engine);
 
         // Create stack of bodies
-        const stack = Composites.stack(0, 0, 50, 100, 30, 30, function (x: number, y: number) {
+        const stack = Composites.stack(0, 0, 30, 10, 30, 30, function (x: number, y: number) {
             const sides = Math.round(Common.random(1, 8));
         
             // Round the edges of some bodies

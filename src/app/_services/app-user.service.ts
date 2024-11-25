@@ -19,7 +19,7 @@ export class AppUserService {
       userName: "muhammadali0201",
       email: 'aliawan0201@gmail.com',
       occupationName: "Software Engineer",
-      displayDescription: `I am a dedicated engineer who focuses on creating both websites and
+      displayDescription: `I am a software engineer with 1+ year of industrial experience who focuses on creating both websites and
                     mobile apps. I am skilled in building web APIs and integrating them with mobile and web applications. I work with a
                     variety of modern technologies, enabling me to provide creative solutions that meet my clients' needs and improve user
                     experiences.`,

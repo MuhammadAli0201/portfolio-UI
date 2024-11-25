@@ -47,6 +47,7 @@ export class ContactComponent {
     let result = await this.emailService.send(this.contactForm.value);
     this.isLoading=false;
     if (result) {
+      this.contactForm.reset();
       this.modal.success({
         nzTitle: "Yes! Email Sent Successfully.",
         nzContent: "Thank you for your time! We'll be in touch with you shortly.",
