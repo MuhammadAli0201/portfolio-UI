@@ -13,7 +13,7 @@ import {
 } from 'matter-js';
 
 export class MatterTs {
-    static gyro(container: HTMLElement, bgColor:string) {
+    static gyro(container: HTMLElement) {
         // Create engine
         let engine = Engine.create();
         const world = engine.world;
@@ -27,7 +27,7 @@ export class MatterTs {
             element: container,
             engine: engine,
             options: {
-                background: bgColor,
+                background: container.style.background,
                 wireframes:false,
                 width: width, // Use container width
                 height: height, // Use container height

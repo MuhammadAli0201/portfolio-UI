@@ -1,7 +1,6 @@
-import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -64,7 +63,7 @@ registerLocaleData(en);
       multi: true,
     },
     provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

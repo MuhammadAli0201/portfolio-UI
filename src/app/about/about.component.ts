@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, signal, ViewChild } from '@angular/core';
+import { afterNextRender, Component, ElementRef, HostListener, OnInit, signal, ViewChild } from '@angular/core';
 import { MatterTs } from '../_matter/matter-ts';
 import { Technology } from '../_models/technology';
 import { Utility } from '../_utility/utility';
@@ -26,18 +26,19 @@ export class AboutComponent implements OnInit {
   //LIFE CYCLES
   constructor(private userService: AppUserService, private modal: NzModalService) {
     this.appUser = this.userService.user!;
+    //HOOK to call a function after ssr is done
+    afterNextRender(() => {
+      MatterTs.gyro(this.matterContainer.nativeElement);
+    });
   }
 
   async ngOnInit(): Promise<void> {
-    await this.pageInit();
+    await this.typeIntro();
   }
 
   //UI LOGIC
-  async pageInit(): Promise<void> {
-    let color = '#121212';
-    MatterTs.gyro(this.matterContainer.nativeElement, color);
-    await this.typeIntro();
-  }
+  // async pageInit(): Promise<void> {
+  // }
 
   async typeIntro(): Promise<void> {
     let typeSpeed = 100;
