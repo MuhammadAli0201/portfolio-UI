@@ -1,0 +1,6 @@
+.project-parent {
+    --padding: clamp(20px, 5vw, 50px);
+    width: 100%;
+    padding: var(--padding) var(--padding) 0px var(--padding);
+    margin: 0px 0px 15px 0px;
+}

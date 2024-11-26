@@ -1,0 +1,52 @@
+<div nz-flex nzAlign="center" nzJustify="center"><span class="h1 primary-color">CONTACT US</span></div>
+<nz-divider></nz-divider>
+<div nz-row>
+    <div nz-col [nzMd]="11">
+        <div class="h-100" nz-flex nzJustify="center">
+            <img class="img-fluid" src="images/contact-me.svg">
+        </div>
+    </div>
+    <div nz-col [nzSm]="24" [nzXs]="24" [nzMd]="13" class="contact-form">
+        <form class="mt-5" nz-form [formGroup]="contactForm">
+            <nz-form-item nz-row>
+                <nz-form-label nz-col nzLabelAlign="left" nzSpan="4" nzRequired>Name</nz-form-label>
+                <nz-form-control nz-col nzSpan="20" nzErrorTip="Required.">
+                    <input formControlName="user_name" nz-col nz-input />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item nz-row>
+                <nz-form-label nz-col nzLabelAlign="left" nzSpan="4" nzRequired>Email</nz-form-label>
+                <nz-form-control nz-col nzSpan="20" [nzErrorTip]="emailErrorTip">
+                    <input nz-col nz-input formControlName="user_email" />
+                </nz-form-control>
+
+                <ng-template #emailErrorTip let-control>
+                    @if (control.errors?.['required']) {
+                    Required.
+                    }
+                    @if (control.errors?.['email']) {
+                    Email you enter is inconsistent!
+                    }
+                </ng-template>
+            </nz-form-item>
+            <nz-form-item nz-row>
+                <nz-form-label nz-col nzLabelAlign="left" nzSpan="4" nzRequired>Subject</nz-form-label>
+                <nz-form-control nz-col nzSpan="20" nzErrorTip="Required.">
+                    <input nz-col nz-input formControlName="user_subject" />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item nz-row>
+                <nz-form-label nz-col nzLabelAlign="left" nzSpan="4" nzRequired>Body</nz-form-label>
+                <nz-form-control nz-col nzSpan="20" nzErrorTip="Required.">
+                    <textarea formControlName="user_message" nz-col nz-input
+                        [nzAutosize]="{ minRows: 10, maxRows: 10}"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+            <div nz-row nzJustify="end">
+                <button nz-button [nzLoading]="isLoading" nzType="primary" (click)="sendEmail()">
+                    <span>Send</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

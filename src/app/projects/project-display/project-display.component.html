@@ -1,0 +1,30 @@
+<div nz-row class="project-info ">
+    <div class="w-100" nz-col [nzMd]="12">
+        <ng-container *ngTemplateOutlet="invert ? detail : image"></ng-container>
+    </div>
+    <div class="w-100" nz-col [nzMd]="11">
+        <ng-container *ngTemplateOutlet="invert ? image : detail"></ng-container>
+    </div>
+</div>
+
+<ng-template #image>
+    <div class="mt-md-4 h-100 w-100" nz-flex nzAlign="center" nzJustify="center">
+        <img class="proj-img" nz-image *ngFor="let img of project.images" [nzSrc]="img.path">
+    </div>
+</ng-template>
+
+<ng-template #detail>
+    <div class="h-100" nz-flex nzGap="middle" nzVertical>
+        <div nz-flex nzJustify="center">
+            <span class="h">{{project.title}}</span>
+        </div>
+        <div class="mt-3 proj-font text-justify">
+            <span class="primary-color"><strong>About: </strong></span>
+            <span >{{project.description}}</span>
+        </div>
+        <div nz-flex class="proj-font" nzWrap="wrap" nzAlign="center" style="margin-top: 10px;">
+            <span class="primary-color mt-1"><strong>Technologies:</strong></span>
+            <nz-tag class="ml-1 mt-1" *ngFor="let tech of techs" [nzColor]="tech.color">{{tech.obj}}</nz-tag>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,19 @@
+<div>
+    <span class="h primary-color">Technologies</span>
+    <div>
+        <div class="h-100 mt-4" nz-flex nzAlign="center" nzJustify="center" nzVertical>
+            <img class="img-fluid" style="width: 80vh; height: auto;" src="images/tech-tree-bg.png">
+            <div class="mt-4" nz-flex nzAlign="center" nzJustify="center" nzGap="small" nzWrap="wrap">
+                <nz-tag style="color: black;" *ngFor="let t of techs" [nzColor]="t.color">{{t.obj.title}}</nz-tag>
+            </div>
+        </div>
+        <div class="mt-4 description">
+            <span class="primary-color">About Me: </span>
+            <span>{{description}}</span>
+        </div>
+    </div>
+
+    <ng-template [nzModalFooter]>
+        <button nz-button (click)="closeModal()">Close</button>
+    </ng-template>
+</div>

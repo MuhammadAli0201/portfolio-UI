@@ -1,0 +1,27 @@
+<div #matterContainer class="matter-container"></div>
+
+<div nz-row class="content">
+    <div class="h-100" nzJustify="center" nzGap="large" nz-flex nzVertical>
+        <div>
+            <span class="h">{{intro()}}</span>
+            <span #titleTag class="h">|</span>
+        </div>
+        <div>
+            <span class="sh font-italic primary-color">{{occupation()}}</span>
+            <span #aboutBtn class="ml-2 sh primary-color about-btn pointer-event-all hidden" nz-icon
+                nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="About" nzTooltipColor="rgb(19, 141, 171)" (click)="createAboutTechComponent()"></span>
+            <span #occupationTag class="hidden sh">|</span>
+        </div>
+    </div>
+
+    <div class="projects-btn pointer-event-all">
+        <button (click)="scrollTo100vh()" class="btn btn-large primary-bg-color text-white">
+            Projects
+            <span nz-icon nzType="arrow-down"></span>
+        </button>
+    </div>
+    <div #scrollToTopBtn nz-flex nzAlign="center" nzJustify="center"
+        class="scroll-to-top-btn pointer-event-all hidden primary-bg-color" nz-tooltip nzTooltipTitle="Top" (click)="scrollToTop()">
+        <span style="font-size: 25px;" nz-icon nzType="arrow-up" nzTheme="outline"></span>
+    </div>
+</div>

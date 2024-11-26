@@ -1,0 +1,22 @@
+::ng-deep .ant-modal-content {
+  background-color: rgb(42, 42, 42) !important;
+  padding: 0px clamp(24px, 4vw, 100px);
+}
+
+::ng-deep .ant-modal-body {
+  padding: clamp(24px, 2vw, 100px) 0px;
+}
+
+::ng-deep .anticon {
+  color: white !important;
+}
+
+.description {
+  color: white;
+  font-size: clamp(12px, 1.5vw, 100px);
+  text-align: justify;
+}
+
+.h {
+  font-size: clamp(19px, 2.3vw, 60px);
+}

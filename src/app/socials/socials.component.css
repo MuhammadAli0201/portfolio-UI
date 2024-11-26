@@ -1,0 +1,7 @@
+.icon-color {
+    font-size: clamp(20px, 1.3vw, 40px);
+}
+
+.white-color {
+    color: white;
+}

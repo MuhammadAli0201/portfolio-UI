@@ -1,0 +1,24 @@
+.project-info {
+  height: auto;
+  width: 100%;
+  margin: 40px 0px 11vw 0px;
+  border-radius: 15px;
+}
+
+.proj-font {
+  /* font-size: 1.1vw; */
+  font-size: clamp(12px, 1.1vw, 28px);
+}
+
+.proj-img{
+    height : clamp(130px, 18vw, 600px)
+}
+
+.proj-img:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+.h {
+  font-size: clamp(18px, 2vw, 50px);
+}
