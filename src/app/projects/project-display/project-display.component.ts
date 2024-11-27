@@ -27,8 +27,11 @@ export class ProjectDisplayComponent implements OnInit {
     });
   }
 
+  //UI LOGIC
   getRandomColor = () => {
     var i = Math.floor(Math.random() * this.colors.length);
     return this.colors[i];
   }
+
+  projectLinkClasses = () : string => !this.project.link ? 'disabled' : 'pointer-event-all visit-proj-btn';  
 }

@@ -11,10 +11,11 @@ import {
   EnvironmentOutline,
   GithubOutline,
   ArrowUpOutline,
-  ArrowDownOutline
+  ArrowDownOutline,
+  ExportOutline
 } from '@ant-design/icons-angular/icons';
 
-const icons = [MenuFoldOutline, MenuUnfoldOutline, DashboardOutline, FormOutline, MailOutline, LinkedinOutline, EnvironmentOutline, GithubOutline, ArrowUpOutline, ArrowDownOutline];
+const icons = [MenuFoldOutline, MenuUnfoldOutline, DashboardOutline, ExportOutline, FormOutline, MailOutline, LinkedinOutline, EnvironmentOutline, GithubOutline, ArrowUpOutline, ArrowDownOutline];
 
 @NgModule({
   imports: [NzIconModule],

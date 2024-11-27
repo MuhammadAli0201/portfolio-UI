@@ -10,13 +10,21 @@
   font-size: clamp(12px, 1.1vw, 28px);
 }
 
-.proj-img{
-    height : clamp(130px, 18vw, 600px)
+.proj-img {
+  height: clamp(130px, 18vw, 600px);
 }
 
 .proj-img:hover {
-  cursor: pointer;
   transform: scale(1.4);
+}
+
+.visit-proj-btn{
+  color: black;
+}
+
+.visit-proj-btn:hover {
+  transform: scale(1.3);
+  color: rgb(19, 141, 171);
 }
 
 .h {

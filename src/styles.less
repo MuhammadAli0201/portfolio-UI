@@ -1,65 +1,75 @@
 @import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
 
-@url : '../public/OpenSans/OpenSans_Condensed';
-@name : 'Noto';
+@url: "../public/OpenSans/OpenSans_Condensed";
+@name: "Noto";
 
 @font-face {
-    font-family: @name;
-    font-weight: bold;
-    src: url(~"@{url}-Bold.ttf") format('truetype');
+  font-family: @name;
+  font-weight: bold;
+  src: url(~"@{url}-Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: @name;
-    font-style: italic;
-    src: url(~'@{url}-Italic.ttf') format('truetype');
+  font-family: @name;
+  font-style: italic;
+  src: url(~"@{url}-Italic.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: @name;
-    font-weight: bold;
-    font-style: italic;
-    src: url(~'@{url}-Bold.ttf') format('truetype');
+  font-family: @name;
+  font-weight: bold;
+  font-style: italic;
+  src: url(~"@{url}-Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: @name;
-    font-style: normal;
-    src: url(~'@{url}-Regular.ttf') format('truetype');
+  font-family: @name;
+  font-style: normal;
+  src: url(~"@{url}-Regular.ttf") format("truetype");
 }
 
 body {
-    font-family: @name, sans-serif !important;
+  font-family: @name, sans-serif !important;
 }
 
 @primary-color: rgb(19, 141, 171);
 
-.hidden
-{
-    display: none;
+.hidden {
+  display: none;
+}
+
+.disabled {
+  color: lightgrey; 
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .primary-color {
-    color: @primary-color;
+  color: @primary-color;
 }
 
 .primary-bg-color {
-    background-color: @primary-color !important;
+  background-color: @primary-color !important;
 }
 
 .primary-border {
-    border: 3px solid @primary-color;
-    border-radius: 15px;
+  border: 3px solid @primary-color;
+  border-radius: 15px;
 }
 
 .round-box {
-    border-radius: 10px;
-    box-shadow: 1px 1px 4px 4px rgb(215, 210, 210);
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 4px rgb(215, 210, 210);
+}
+
+.pointer-event-all {
+  pointer-events: all;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .ant-tooltip {
-      display: none !important;
-    }
+  .ant-tooltip {
+    display: none !important;
   }
-  
+}
