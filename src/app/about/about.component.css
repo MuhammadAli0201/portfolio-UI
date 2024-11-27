@@ -112,6 +112,10 @@ tag {
     font-size: 10vw;
   }
 
+  .content {
+    pointer-events: all;
+  }
+
   .sh {
     font-size: 6vw;
   }
