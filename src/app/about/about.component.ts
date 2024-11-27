@@ -37,9 +37,6 @@ export class AboutComponent implements OnInit {
   }
 
   //UI LOGIC
-  // async pageInit(): Promise<void> {
-  // }
-
   async typeIntro(): Promise<void> {
     let typeSpeed = 100;
     let intro = ["Hi. ", "I'm " + this.appUser.name];
@@ -86,6 +83,7 @@ export class AboutComponent implements OnInit {
       nzWidth: "80%",
       nzStyle: { top: '15px' },
       nzFooter: null,
+      nzMaskClosable:false
     });
     const instance = modal.getContentComponent();
     instance.technologies = this.appUser.technologies!;
