@@ -33,5 +33,5 @@ export class ProjectDisplayComponent implements OnInit {
     return this.colors[i];
   }
 
-  projectLinkClasses = () : string => !this.project.link ? 'disabled' : 'pointer-event-all visit-proj-btn';  
+  projectLinkClasses = () : string => !this.project.link ? 'disabled' : 'pointer-event-all';  
 }
